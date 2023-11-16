@@ -1,0 +1,4 @@
+Задание 1
+select c.id as courier_id, COUNT(o.id) as orders_Count from "Couriers" as c LEFT JOIN "Orders" as o ON c.id = o."courierId" WHERE o."inDelivery" = true GROUP BY c.id;
+Задание 2
+select o.track, CASE WHEN o.finished = true THEN 2 WHEN o.cancelled = true THEN -1 WHEN o."inDelivery" THEN 1 ELSE 0 END as Status from "Orders" as o;
